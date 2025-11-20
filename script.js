@@ -40,14 +40,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Pesan berhasil dikirim! Saya akan membalasnya segera.');
-        contactForm.reset();
-    });
-}
 
 // Animation on scroll
 const observerOptions = {
