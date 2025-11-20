@@ -85,85 +85,149 @@ body {
 }
 
 /* Hero Section */
+/* Hero Section - Adham Dannaway Style */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
     background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     color: #ecf0f1;
+    position: relative;
 }
 
 .hero-content {
-    flex: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-text {
     max-width: 600px;
 }
 
-.hero-content h1 {
+.hero h1 {
     font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1rem;
 }
 
-.highlight {
+.hero-subtitle {
+    font-size: 1.5rem;
     color: #3498db;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: #bdc3c7;
+    max-width: 500px;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-}
-
-.btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: #3498db;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: var(--dark-color);
+    flex-wrap: wrap;
 }
 
 .hero-image {
-    flex: 1;
     text-align: center;
 }
 
 .hero-image img {
+    width: 100%;
     max-width: 400px;
-    border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.scroll-indicator span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.arrow {
+    width: 2px;
+    height: 30px;
+    background: #3498db;
+    margin: 0 auto;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #3498db;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .hero-image img {
+        max-width: 300px;
+    }
+}
 /* Sections */
+
+
+
+
 section {
     padding: 80px 0;
 }
