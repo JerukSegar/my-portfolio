@@ -74,3 +74,43 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
+
+// Header color change based on section
+function updateHeaderColor() {
+    const navbar = document.querySelector('.navbar');
+    const homeSection = document.getElementById('home');
+    const homeRect = homeSection.getBoundingClientRect();
+    
+    // Jika home section masih terlihat di viewport (atas layar)
+    if (homeRect.bottom > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.color = 'var(--text-color)';
+        // Update logo dan link warna
+        document.querySelector('.nav-logo a').style.color = 'var(--primary-color)';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.style.color = 'var(--text-color)';
+        });
+        document.querySelectorAll('.hamburger span').forEach(span => {
+            span.style.background = 'var(--text-color)';
+        });
+    } else {
+        // Ketau sudah scroll keluar dari home section
+        navbar.style.background = 'var(--dark-color)';
+        navbar.style.color = 'white';
+        // Update logo dan link warna
+        document.querySelector('.nav-logo a').style.color = 'white';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.style.color = '#ecf0f1';
+        });
+        document.querySelectorAll('.hamburger span').forEach(span => {
+            span.style.background = 'white';
+        });
+    }
+}
+
+// Panggil function saat scroll dan load
+window.addEventListener('scroll', updateHeaderColor);
+window.addEventListener('load', updateHeaderColor);
+
+// Juga panggil saat resize (untuk responsive)
+window.addEventListener('resize', updateHeaderColor);
