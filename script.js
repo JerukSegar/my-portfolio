@@ -64,19 +64,6 @@ document.querySelectorAll('.skill-item, .project-card, .stat').forEach(el => {
     observer.observe(el);
 });
 
-/* Update scroll effect */
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'var(--dark-color)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.background = 'var(--dark-color)';
-        navbar.style.boxShadow = 'none';
-    }
-});
-
-// Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
