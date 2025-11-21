@@ -38,19 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
 
-// Form submission
 
 // Animation on scroll
 const observerOptions = {
@@ -127,7 +115,7 @@ function updateHeaderColor() {
 
 
 
-
+// Project Data - Simpan data project Anda di sini
 const projectsData = {
     'jemuran': {
         title: 'JEMURAN THE GAME',
@@ -138,21 +126,23 @@ const projectsData = {
             'jemuran-gameplay2.jpg',
             'jemuran-character.jpg'
         ],
-        description: '[isi deskripsi]',
+        description: 'A survival game developed with 5 other developers. I was responsible for creating visual elements including characters and environments.',
         techStack: [
             'Engine: Godot 4.0',
-            'Graphics: [apa?]',
+            'Graphics: Pixel Art',
             'Programming: GDScript',
-            'Tools: Aseprite [yang lain baca di dokumen]'
-	    'Platform: PC'
+            'Tools: Aseprite',
+            'Platform: PC'
         ],
         roles: [
-            '[game artist]',
-            'Created game assets and objects[uhhh]'
+            'Game Artist',
+            'Created game assets and objects',
+            'Designed characters and environments'
         ],
         features: [
-            '[ada jemuran]',
-            '[baca di dokumen]',
+            'Survival gameplay mechanics',
+            'Pixel art style',
+            'Multiple levels'
         ],
         videoLink: 'https://youtu.be/jemuran-game-demo'
     },
@@ -165,23 +155,24 @@ const projectsData = {
             'sproste-gameplay2.jpg',
             'sproste-puzzle.jpg'
         ],
-        description: '[isi deskripsi]',
+        description: 'A side-scrolling puzzle game developed with 3 other developers. As the Artist, I was responsible for the visual aspects, including characters, environments, and the user interface.',
         techStack: [
             'Engine: Unity',
             'Graphics: 2D Pixel',
             'Programming: C#',
-            'Tools: Aseprite [isi]',
+            'Tools: Aseprite',
             'Platform: PC'
         ],
         roles: [
             'Game Artist',
-	    'Created UI/UX',
+            'Created UI/UX',
             'Created main character sprites',
             'Created environment assets and objects',
         ],
         features: [
-            '[isi]',
-            '[isi]',
+            'Side-scrolling puzzle mechanics',
+            'Pixel art graphics',
+            'Intuitive UI/UX'
         ],
         videoLink: 'https://youtu.be/sproste-gameplay'
     },
@@ -193,12 +184,12 @@ const projectsData = {
             'portfolio-mobile.jpg',
             'portfolio-design.jpg'
         ],
-        description: 'web ini',
+        description: 'Personal portfolio website to showcase my projects and skills as a programmer and game artist.',
         techStack: [
             'Frontend: HTML5, CSS3, JavaScript',
             'Styling: Custom CSS with CSS Variables',
             'Deployment: GitHub',
-            'Tools: Notepad, Git'
+            'Tools: VS Code, Git'
         ],
         roles: [
             'Full-stack Developer & Designer',
@@ -213,10 +204,10 @@ const projectsData = {
             'Interactive project gallery',
             'Contact form with validation',
             'Fast loading performance'
-        ],
-        //videoLink: 'https://youtu.be/portfolio-website-tour'
+        ]
     }
 };
+
 
 // Modal Functionality
 const modal = document.getElementById('projectModal');
