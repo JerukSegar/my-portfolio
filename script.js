@@ -182,14 +182,15 @@ function openModal(project) {
 }
 
 // Function untuk mengisi konten modal
+
 function fillModalContent(project) {
-    // tambahan
 	const descriptionTitle = document.querySelector('.detail-section h3');
-	if (projectKey === 'portfolio') {
-    descriptionTitle.textContent = 'Project Description';
-	} else {
-    	descriptionTitle.textContent = 'Game Description';
-	}
+    	if (project.title.includes('PORTFOLIO')) {
+       		 descriptionTitle.textContent = 'Project Description';
+   	 } else {
+     		   descriptionTitle.textContent = 'Game Description';
+   	 }
+    
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
     
@@ -276,8 +277,9 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Add click event to all "View Details" buttons - FIXED VERSION
-document.addEventListener('DOMContentLoaded', function() {
+
+// Add click event to all "View Details" buttons - VERSI DIPERBAIKI
+function initializeProjectButtons() {
     document.querySelectorAll('.project-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -298,9 +300,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 openModal(projectsData[projectKey]);
             } else {
                 console.log('Project data not found for key:', projectKey);
+                // Fallback: show alert atau buka modal dengan data default
+                alert('Project details not available yet.');
             }
         });
     });
+}
+
+// Initialize ketika DOM siap
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProjectButtons();
+    // ... inisialisasi lainnya yang sudah ada
 });
 
 // Event Listeners for closing modal
