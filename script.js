@@ -88,13 +88,13 @@ const projectsData = {
             'jemuran-gameplay2.jpg',
             'jemuran-character.jpg'
         ],
-        description: 'A survival game developed with 5 other developers. I was responsible for creating visual elements including characters and environments.',
+        description: 'A management genre game where the player plays as a little kid who is assigned to look after the laundry by his mother.',
         techStack: [
-            'Engine: Godot 4.0',
-            'Graphics: Pixel Art',
-            'Programming: GDScript',
-            'Tools: Aseprite',
-            'Platform: PC'
+            	'Genre		: Management/Survival',
+		'Platform	: PC (Windows)',
+		'Game Engine	: GODOT',
+		'Art		: Pixel 2D, Top-down',
+		'Sound		: Open-sourced'
         ],
         roles: [
             'Game Artist',
@@ -102,7 +102,7 @@ const projectsData = {
             'Designed characters and environments'
         ],
         features: [
-            'Survival gameplay mechanics',
+            'Top-down survival gameplay mechanics',
             'Pixel art style',
             'Multiple levels'
         ],
@@ -117,13 +117,13 @@ const projectsData = {
             'sproste-gameplay2.jpg',
             'sproste-puzzle.jpg'
         ],
-        description: 'A side-scrolling puzzle game developed with 3 other developers. As the Artist, I was responsible for the visual aspects, including characters, environments, and the user interface.',
+        description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity's journey to defeat its own trash.',
         techStack: [
-            'Engine: Unity',
-            'Graphics: 2D Pixel',
-            'Programming: C#',
-            'Tools: Aseprite',
-            'Platform: PC'
+            	'Genre		: Puzzle, Adventure',
+		'Platform	: PC (Windows)',
+		'Game Engine	: Unity',
+		'Art		: Pixel 2D, Side-scroll',
+		'Sound		: Open-sourced'
         ],
         roles: [
             'Game Artist',
@@ -183,6 +183,13 @@ function openModal(project) {
 
 // Function untuk mengisi konten modal
 function fillModalContent(project) {
+    // tambahan
+	const descriptionTitle = document.querySelector('.detail-section h3');
+	if (projectKey === 'portfolio') {
+    descriptionTitle.textContent = 'Project Description';
+	} else {
+    	descriptionTitle.textContent = 'Game Description';
+	}
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
     
