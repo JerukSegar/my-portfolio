@@ -183,14 +183,8 @@ function openModal(project) {
 
 // Function untuk mengisi konten modal
 
+// Function untuk mengisi konten modal - DIPERBAIKI
 function fillModalContent(project) {
-	const descriptionTitle = document.querySelector('.detail-section h3');
-    	if (project.title.includes('PORTFOLIO')) {
-       		 descriptionTitle.textContent = 'Project Description';
-   	 } else {
-     		   descriptionTitle.textContent = 'Game Description';
-   	 }
-    
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
     
@@ -270,6 +264,19 @@ function fillModalContent(project) {
         gallery.appendChild(thumbnail);
     });
 }
+
+// Debugging function - untuk testing
+function debugModal() {
+    console.log('Modal element:', modal);
+    console.log('Close button:', closeBtn);
+    console.log('Project links:', document.querySelectorAll('.project-link').length);
+    
+    // Test buka modal secara manual
+    openModal(projectsData.jemuran);
+}
+
+// Panggil fungsi debug untuk testing (bisa dihapus nanti)
+// debugModal();
 
 // Close Modal Function
 function closeModal() {

@@ -860,7 +860,7 @@ section {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 9999; /* HAPUS yang 2000, gunakan hanya ini */
     left: 0;
     top: 0;
     width: 100%;
@@ -1054,16 +1054,4 @@ section {
         width: 60px;
         height: 45px;
     }
-}
-
-/* Tambahkan di CSS untuk debugging */
-.modal {
-    display: none; /* Tetap none default */
-    /* Pastikan z-index tinggi */
-    z-index: 9999;
-}
-
-/* Untuk testing, bisa tambahkan style sementara */
-.debug-modal {
-    border: 2px solid red !important;
 }
