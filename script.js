@@ -16,6 +16,11 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // Skip smooth scrolling for project links (they have their own functionality)
+        if (this.classList.contains('project-link')) {
+            return;
+        }
+        
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -90,11 +95,11 @@ const projectsData = {
         ],
         description: 'A management genre game where the player plays as a little kid who is assigned to look after the laundry by his mother.',
         techStack: [
-            	'Genre		: Management/Survival',
-		'Platform	: PC (Windows)',
-		'Game Engine	: GODOT',
-		'Art		: Pixel 2D, Top-down',
-		'Sound		: Open-sourced'
+            'Genre: Management/Survival',
+            'Platform: PC (Windows)',
+            'Game Engine: GODOT',
+            'Art: Pixel 2D, Top-down',
+            'Sound: Open-sourced'
         ],
         roles: [
             'Game Artist',
@@ -117,13 +122,13 @@ const projectsData = {
             'sproste-gameplay2.jpg',
             'sproste-puzzle.jpg'
         ],
-        description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity's journey to defeat its own trash.',
+        description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity\'s journey to defeat its own trash.',
         techStack: [
-            	'Genre		: Puzzle, Adventure',
-		'Platform	: PC (Windows)',
-		'Game Engine	: Unity',
-		'Art		: Pixel 2D, Side-scroll',
-		'Sound		: Open-sourced'
+            'Genre: Puzzle, Adventure',
+            'Platform: PC (Windows)',
+            'Game Engine: Unity',
+            'Art: Pixel 2D, Side-scroll',
+            'Sound: Open-sourced'
         ],
         roles: [
             'Game Artist',
@@ -181,9 +186,7 @@ function openModal(project) {
     document.body.style.overflow = 'hidden';
 }
 
-// Function untuk mengisi konten modal
-
-// Function untuk mengisi konten modal - DIPERBAIKI
+// Function to fill modal content
 function fillModalContent(project) {
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
@@ -201,7 +204,7 @@ function fillModalContent(project) {
     
     // Handle video link - sembunyikan jika tidak ada
     const videoLinkElement = document.getElementById('modalVideoLink');
-    if (project.videoLink) {
+    if (project.videoLink && project.videoLink !== 'https://drive.google.com/your-link-here') {
         videoLinkElement.href = project.videoLink;
         videoLinkElement.style.display = 'inline-flex';
     } else {
@@ -265,60 +268,50 @@ function fillModalContent(project) {
     });
 }
 
-// Debugging function - untuk testing
-function debugModal() {
-    console.log('Modal element:', modal);
-    console.log('Close button:', closeBtn);
-    console.log('Project links:', document.querySelectorAll('.project-link').length);
-    
-    // Test buka modal secara manual
-    openModal(projectsData.jemuran);
-}
-
-// Panggil fungsi debug untuk testing (bisa dihapus nanti)
-// debugModal();
-
 // Close Modal Function
 function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
-
-// Add click event to all "View Details" buttons - VERSI DIPERBAIKI
+// Initialize project buttons - VERSI YANG DIPERBAIKI
 function initializeProjectButtons() {
+    const projectLinks = document.querySelectorAll('.project-link');
+    console.log('Found project links:', projectLinks.length);
+    
+    projectLinks.forEach(link => {
+        // Hapus event listener lama jika ada
+        link.replaceWith(link.cloneNode(true));
+    });
+    
+    // Tambahkan event listener baru
     document.querySelectorAll('.project-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('View Details clicked'); // Debug log
+            e.stopPropagation();
+            
+            console.log('View Details clicked');
             
             const projectCard = this.closest('.project-card');
             const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase();
-            console.log('Project title:', projectTitle); // Debug log
+            console.log('Project title:', projectTitle);
             
             let projectKey = '';
             if (projectTitle.includes('jemuran')) projectKey = 'jemuran';
             else if (projectTitle.includes('sproste')) projectKey = 'sproste';
             else if (projectTitle.includes('portfolio')) projectKey = 'portfolio';
             
-            console.log('Project key:', projectKey); // Debug log
+            console.log('Project key:', projectKey);
             
             if (projectsData[projectKey]) {
                 openModal(projectsData[projectKey]);
             } else {
                 console.log('Project data not found for key:', projectKey);
-                // Fallback: show alert atau buka modal dengan data default
                 alert('Project details not available yet.');
             }
         });
     });
 }
-
-// Initialize ketika DOM siap
-document.addEventListener('DOMContentLoaded', function() {
-    initializeProjectButtons();
-    // ... inisialisasi lainnya yang sudah ada
-});
 
 // Event Listeners for closing modal
 closeBtn.addEventListener('click', closeModal);
@@ -335,7 +328,13 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Initialize
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProjectButtons();
+    updateHeaderColor();
+});
+
+// Event listeners for header color
 window.addEventListener('scroll', updateHeaderColor);
 window.addEventListener('load', updateHeaderColor);
 window.addEventListener('resize', updateHeaderColor);
