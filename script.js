@@ -118,6 +118,7 @@ const projectsData = {
         mainImage: 'logo_sproste.png',
         gallery: [
             'logo_sproste.png',
+	    'sproste-menu.png',
             'sproste-gameplay1.png',
             'sproste-gameplay2.png',
             'sproste-character.png'
