@@ -106,7 +106,7 @@ const projectsData = {
             'Pixel art style',
             'Multiple levels'
         ],
-        videoLink: 'https://drive.google.com/your-link-here' // Ganti dengan link Google Drive
+        videoLink: 'https://drive.google.com/your-link-here'
     },
     'sproste': {
         title: 'SPROSTE',
@@ -136,7 +136,7 @@ const projectsData = {
             'Pixel art graphics',
             'Intuitive UI/UX'
         ],
-        videoLink: 'https://drive.google.com/your-link-here' // Ganti dengan link Google Drive
+        videoLink: 'https://drive.google.com/your-link-here'
     },
     'portfolio': {
         title: 'PORTFOLIO WEBSITE',
@@ -167,7 +167,6 @@ const projectsData = {
             'Contact form with validation',
             'Fast loading performance'
         ]
-        // Tidak ada videoLink untuk portfolio
     }
 };
 
@@ -175,24 +174,12 @@ const projectsData = {
 const modal = document.getElementById('projectModal');
 const closeBtn = document.querySelector('.close');
 
-// Add click event to all "View Details" buttons
-document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const projectCard = this.closest('.project-card');
-        const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase();
-        
-        let projectKey = '';
-        if (projectTitle.includes('jemuran')) projectKey = 'jemuran';
-        else if (projectTitle.includes('sproste')) projectKey = 'sproste';
-        else if (projectTitle.includes('portfolio')) projectKey = 'portfolio';
-        
-        if (projectsData[projectKey]) {
-            openModal(projectsData[projectKey]);
-        }
-    });
-});
-
+// Function to open modal
+function openModal(project) {
+    fillModalContent(project);
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
 
 // Function untuk mengisi konten modal
 function fillModalContent(project) {
@@ -281,6 +268,33 @@ function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+
+// Add click event to all "View Details" buttons - FIXED VERSION
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('View Details clicked'); // Debug log
+            
+            const projectCard = this.closest('.project-card');
+            const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase();
+            console.log('Project title:', projectTitle); // Debug log
+            
+            let projectKey = '';
+            if (projectTitle.includes('jemuran')) projectKey = 'jemuran';
+            else if (projectTitle.includes('sproste')) projectKey = 'sproste';
+            else if (projectTitle.includes('portfolio')) projectKey = 'portfolio';
+            
+            console.log('Project key:', projectKey); // Debug log
+            
+            if (projectsData[projectKey]) {
+                openModal(projectsData[projectKey]);
+            } else {
+                console.log('Project data not found for key:', projectKey);
+            }
+        });
+    });
+});
 
 // Event Listeners for closing modal
 closeBtn.addEventListener('click', closeModal);
