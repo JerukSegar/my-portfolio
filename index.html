@@ -293,6 +293,57 @@
     </div>
 </footer>
 
+<!-- Modal Structure -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">Project Title</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Section -->
+            <div class="modal-gallery">
+                <div class="main-image">
+                    <img id="modalMainImage" src="" alt="Main Project Image">
+                </div>
+                <div class="thumbnail-gallery">
+                    <!-- Thumbnails will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Project Details -->
+            <div class="project-details">
+                <div class="detail-section">
+                    <h3>📖 Description Lengkap</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>⚙️ Tech Stack Detail</h3>
+                    <ul id="modalTechStack" class="tech-list"></ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>👨‍💻 Role & Responsibilities</h3>
+                    <ul id="modalRoles" class="roles-list"></ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>🎯 Fitur-fitur Detail</h3>
+                    <ul id="modalFeatures" class="features-list"></ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>📹 Video Demo</h3>
+                    <a id="modalVideoLink" href="#" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Watch on YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
