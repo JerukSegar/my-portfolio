@@ -86,6 +86,12 @@ body {
 }
 
 /* Hero Section */
+/* Hero tapi diisi gambar */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)), 
+                url('nama-gambar-anda.jpg') center/cover;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
