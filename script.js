@@ -89,9 +89,9 @@ const projectsData = {
         mainImage: 'logo_jemuran.png',
         gallery: [
             'logo_jemuran.png',
-            'jemuran-gameplay1.jpg',
-            'jemuran-gameplay2.jpg',
-            'jemuran-character.jpg'
+            'jemuran-gameplay1.png',
+            'jemuran-gameplay2.png',
+            'jemuran-character.png'
         ],
         description: 'A management genre game where the player plays as a little kid who is assigned to look after the laundry by his mother.',
         techStack: [
@@ -118,9 +118,9 @@ const projectsData = {
         mainImage: 'logo_sproste.png',
         gallery: [
             'logo_sproste.png',
-            'sproste-gameplay1.jpg',
-            'sproste-gameplay2.jpg',
-            'sproste-puzzle.jpg'
+            'sproste-gameplay1.png',
+            'sproste-gameplay2.png',
+            'sproste-puzzle.png'
         ],
         description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity\'s journey to defeat its own trash.',
         techStack: [
