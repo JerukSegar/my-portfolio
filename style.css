@@ -634,3 +634,7 @@ section {
 .hamburger.active:hover span {
     background: var(--primary-color);
 }
+
+.scroll-indicator {
+    display: none;
+}
