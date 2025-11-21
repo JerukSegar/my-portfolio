@@ -13,17 +13,6 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Mobile dropdown functionality
-document.querySelectorAll('.nav-dropdown .nav-link').forEach(dropdown => {
-    dropdown.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdownParent = this.parentElement;
-            dropdownParent.classList.toggle('active');
-        }
-    });
-});
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -37,8 +26,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-
 
 // Animation on scroll
 const observerOptions = {
@@ -63,28 +50,14 @@ document.querySelectorAll('.skill-item, .project-card, .stat').forEach(el => {
     observer.observe(el);
 });
 
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'var(--dark-color)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.background = 'var(--dark-color)';
-        navbar.style.boxShadow = 'none';
-    }
-});
-
 // Header color change based on section
 function updateHeaderColor() {
     const navbar = document.querySelector('.navbar');
     const homeSection = document.getElementById('home');
     const homeRect = homeSection.getBoundingClientRect();
     
-    // Jika home section masih terlihat di viewport (atas layar)
     if (homeRect.bottom > 100) {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.color = 'var(--text-color)';
-        // Update logo dan link warna
         document.querySelector('.nav-logo a').style.color = 'var(--primary-color)';
         document.querySelectorAll('.nav-link').forEach(link => {
             link.style.color = 'var(--text-color)';
@@ -93,10 +66,7 @@ function updateHeaderColor() {
             span.style.background = 'var(--text-color)';
         });
     } else {
-        // Ketau sudah scroll keluar dari home section
         navbar.style.background = 'var(--dark-color)';
-        navbar.style.color = 'white';
-        // Update logo dan link warna
         document.querySelector('.nav-logo a').style.color = 'white';
         document.querySelectorAll('.nav-link').forEach(link => {
             link.style.color = '#ecf0f1';
@@ -107,15 +77,7 @@ function updateHeaderColor() {
     }
 }
 
-
-
-
-// Project Data - Simpan data project Anda di sini
-
-
-
-
-// Project Data - Simpan data project Anda di sini
+// Project Data
 const projectsData = {
     'jemuran': {
         title: 'JEMURAN THE GAME',
@@ -144,7 +106,7 @@ const projectsData = {
             'Pixel art style',
             'Multiple levels'
         ],
-        videoLink: 'https://youtu.be/jemuran-game-demo'
+        videoLink: 'https://drive.google.com/your-link-here' // Ganti dengan link Google Drive
     },
     'sproste': {
         title: 'SPROSTE',
@@ -174,7 +136,7 @@ const projectsData = {
             'Pixel art graphics',
             'Intuitive UI/UX'
         ],
-        videoLink: 'https://youtu.be/sproste-gameplay'
+        videoLink: 'https://drive.google.com/your-link-here' // Ganti dengan link Google Drive
     },
     'portfolio': {
         title: 'PORTFOLIO WEBSITE',
@@ -205,9 +167,9 @@ const projectsData = {
             'Contact form with validation',
             'Fast loading performance'
         ]
+        // Tidak ada videoLink untuk portfolio
     }
 };
-
 
 // Modal Functionality
 const modal = document.getElementById('projectModal');
@@ -231,14 +193,46 @@ document.querySelectorAll('.project-link').forEach(link => {
     });
 });
 
-// Open Modal Function
+// Open Modal Function dengan Loading State
 function openModal(project) {
+    // Show modal dengan loading
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Kosongkan modal body sementara untuk loading
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--primary-color);">Loading project details...</div>';
+    
+    // Beri timeout kecil lalu isi konten
+    setTimeout(() => {
+        fillModalContent(project);
+    }, 50);
+}
+
+// Function untuk mengisi konten modal
+function fillModalContent(project) {
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
-    document.getElementById('modalMainImage').src = project.mainImage;
-    document.getElementById('modalMainImage').alt = project.title;
+    
+    // Handle main image dengan error fallback
+    const mainImage = document.getElementById('modalMainImage');
+    mainImage.src = project.mainImage;
+    mainImage.alt = project.title;
+    mainImage.onerror = function() {
+        this.src = 'placeholder.jpg';
+        this.alt = 'Image not available';
+    };
+    
     document.getElementById('modalDescription').textContent = project.description;
-    document.getElementById('modalVideoLink').href = project.videoLink;
+    
+    // Handle video link - sembunyikan jika tidak ada
+    const videoLinkElement = document.getElementById('modalVideoLink');
+    if (project.videoLink) {
+        videoLinkElement.href = project.videoLink;
+        videoLinkElement.style.display = 'inline-flex';
+    } else {
+        videoLinkElement.style.display = 'none';
+    }
     
     // Set tech stack
     const techList = document.getElementById('modalTechStack');
@@ -267,7 +261,7 @@ function openModal(project) {
         featuresList.appendChild(li);
     });
     
-    // Set gallery
+    // Set gallery dengan error handling
     const gallery = document.querySelector('.thumbnail-gallery');
     gallery.innerHTML = '';
     project.gallery.forEach((image, index) => {
@@ -276,6 +270,11 @@ function openModal(project) {
         thumbnail.alt = `Thumbnail ${index + 1}`;
         thumbnail.className = 'thumbnail';
         if (index === 0) thumbnail.classList.add('active');
+        
+        // Error handling untuk thumbnail
+        thumbnail.onerror = function() {
+            this.style.display = 'none';
+        };
         
         thumbnail.addEventListener('click', () => {
             // Update main image
@@ -290,16 +289,12 @@ function openModal(project) {
         
         gallery.appendChild(thumbnail);
     });
-    
-    // Show modal
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 // Close Modal Function
 function closeModal() {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';
 }
 
 // Event Listeners for closing modal
@@ -317,9 +312,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Panggil function saat scroll dan load
+// Initialize
 window.addEventListener('scroll', updateHeaderColor);
 window.addEventListener('load', updateHeaderColor);
-
-// Juga panggil saat resize (untuk responsive)
 window.addEventListener('resize', updateHeaderColor);

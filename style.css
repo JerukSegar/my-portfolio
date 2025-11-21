@@ -1001,7 +1001,6 @@ section {
 }
 
 .tech-list li:before, .roles-list li:before, .features-list li:before {
-    content: "✓";
     color: var(--primary-color);
     font-weight: bold;
     position: absolute;
