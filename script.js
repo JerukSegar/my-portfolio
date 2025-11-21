@@ -38,22 +38,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ... (kode JavaScript lainnya tetap sama)
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -140,4 +124,4 @@ window.addEventListener('scroll', updateHeaderColor);
 window.addEventListener('load', updateHeaderColor);
 
 // Juga panggil saat resize (untuk responsive)
-window.addEventListener('resize', updateHeaderColor);f
+window.addEventListener('resize', updateHeaderColor);

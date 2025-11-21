@@ -821,3 +821,8 @@ section {
         max-width: 100px;
     }
 }
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+}
