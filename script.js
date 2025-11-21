@@ -171,7 +171,8 @@ const projectsData = {
             'Interactive project gallery',
             'Contact form with validation',
             'Fast loading performance'
-        ]
+        ],
+	projectType: 'website'
     }
 };
 
@@ -198,6 +199,13 @@ function fillModalContent(project) {
     mainImage.onerror = function() {
         this.src = 'placeholder.jpg';
         this.alt = 'Image not available';
+
+	const descriptionTitle = document.querySelector('.detail-section h3');
+	if (project.projectType === 'website') {
+    		descriptionTitle.textContent = 'Project Description';
+	} else {
+   		 descriptionTitle.textContent = 'Game Description';
+	}
     };
     
     document.getElementById('modalDescription').textContent = project.description;
