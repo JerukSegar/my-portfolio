@@ -120,7 +120,7 @@ const projectsData = {
             'logo_sproste.png',
             'sproste-gameplay1.png',
             'sproste-gameplay2.png',
-            'sproste-puzzle.png'
+            'sproste-character.png'
         ],
         description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity\'s journey to defeat its own trash.',
         techStack: [
