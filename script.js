@@ -193,21 +193,6 @@ document.querySelectorAll('.project-link').forEach(link => {
     });
 });
 
-// Open Modal Function dengan Loading State
-function openModal(project) {
-    // Show modal dengan loading
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    // Kosongkan modal body sementara untuk loading
-    const modalBody = document.querySelector('.modal-body');
-    modalBody.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--primary-color);">Loading project details...</div>';
-    
-    // Beri timeout kecil lalu isi konten
-    setTimeout(() => {
-        fillModalContent(project);
-    }, 50);
-}
 
 // Function untuk mengisi konten modal
 function fillModalContent(project) {
