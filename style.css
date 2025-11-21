@@ -591,3 +591,44 @@ section {
         width: 100%;
     }
 }
+
+/* Navigation Hover Effects - Match Footer Colors */
+.nav-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.nav-logo a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Active link styling */
+.nav-link:active {
+    color: var(--accent-color);
+}
+
+/* Mobile menu hover effects */
+@media (max-width: 768px) {
+    .nav-menu.active .nav-link:hover {
+        background-color: rgba(52, 152, 219, 0.1);
+        color: var(--primary-color);
+        transform: translateX(5px);
+    }
+    
+    .nav-menu.active .nav-link {
+        padding: 1rem;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Hamburger hover effect */
+.hamburger:hover span {
+    background: var(--primary-color);
+}
+
+.hamburger.active:hover span {
+    background: var(--primary-color);
+}
