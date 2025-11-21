@@ -1008,14 +1008,6 @@ section {
     left: 0;
 }
 
-.features-list li:before {
-    content: "🎯";
-}
-
-.roles-list li:before {
-    content: "👨‍💻";
-}
-
 /* Video Link */
 .video-link {
     display: inline-flex;

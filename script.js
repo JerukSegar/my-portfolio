@@ -119,10 +119,18 @@ function updateHeaderColor() {
     }
 }
 
+
+
+
 // Project Data - Simpan data project Anda di sini
+
+
+
+
+
 const projectsData = {
     'jemuran': {
-        title: '🎮 JEMURAN THE GAME',
+        title: 'JEMURAN THE GAME',
         mainImage: 'logo_jemuran.png',
         gallery: [
             'logo_jemuran.png',
@@ -130,34 +138,26 @@ const projectsData = {
             'jemuran-gameplay2.jpg',
             'jemuran-character.jpg'
         ],
-        description: 'Game survival 2D pixel art dimana pemain berperan sebagai anak yang harus menjaga pakaian jemuran dari berbagai ancaman seperti hujan, tikus, burung, dan anak nakal. Setiap level memiliki target score yang harus dicapai sebelum waktu habis.',
+        description: '[isi deskripsi]',
         techStack: [
             'Engine: Godot 4.0',
-            'Graphics: Pixel Art (128x128 resolution)',
+            'Graphics: [apa?]',
             'Programming: GDScript',
-            'Audio: BFXR untuk sound effects',
-            'Tools: Aseprite, Tiled, Audacity'
+            'Tools: Aseprite [yang lain baca di dokumen]'
+	    'Platform: PC'
         ],
         roles: [
-            'Lead Artist & UI Designer',
-            'Created all character sprites (main character, enemies, NPCs)',
-            'Designed environment tilesets (house, yard, background)',
-            'Developed complete UI system (menus, HUD, icons)',
-            'Animated character movements and interactions',
-            'Created visual effects (rain, wind, day/night transition)'
+            '[game artist]',
+            'Created game assets and objects[uhhh]'
         ],
         features: [
-            'Day/Night cycle dengan perubahan gameplay',
-            '3 jenis musuh dengan AI berbeda',
-            'Weather system yang mempengaruhi gameplay',
-            'Power-up system (payung, peluit, jaring)',
-            'Progressive difficulty curve',
-            'Local score tracking'
+            '[ada jemuran]',
+            '[baca di dokumen]',
         ],
         videoLink: 'https://youtu.be/jemuran-game-demo'
     },
     'sproste': {
-        title: '🧩 SPROSTE',
+        title: 'SPROSTE',
         mainImage: 'logo_sproste.png',
         gallery: [
             'logo_sproste.png',
@@ -165,54 +165,46 @@ const projectsData = {
             'sproste-gameplay2.jpg',
             'sproste-puzzle.jpg'
         ],
-        description: 'Puzzle platformer 2D dengan mechanics gravitasi dinamis. Pemain dapat mengubah arah gravitasi untuk menyelesaikan teka-teki ruangan. Setiap bab memperkenalkan mechanics baru yang semakin menantang.',
+        description: '[isi deskripsi]',
         techStack: [
-            'Engine: Unity 2022.3 LTS',
-            'Graphics: Vector Art style',
+            'Engine: Unity',
+            'Graphics: 2D Pixel',
             'Programming: C#',
-            'Tools: Figma, Illustrator, Photoshop',
-            'Platform: Windows, WebGL'
+            'Tools: Aseprite [isi]',
+            'Platform: PC'
         ],
         roles: [
-            'Game Artist & UI/UX Designer',
-            'Designed main character and enemy sprites',
-            'Created environment assets and interactive objects',
-            'Developed complete UI/UX flow',
-            'Implemented visual feedback systems',
-            'Collaborated on level design and puzzle mechanics'
+            'Game Artist',
+	    'Created UI/UX',
+            'Created main character sprites',
+            'Created environment assets and objects',
         ],
         features: [
-            '6 worlds dengan 8 levels each',
-            'Dynamic gravity manipulation',
-            'Color-based puzzle mechanics',
-            'Smooth controller and keyboard support',
-            'Hint system untuk pemula',
-            'Minimalist audio design'
+            '[isi]',
+            '[isi]',
         ],
         videoLink: 'https://youtu.be/sproste-gameplay'
     },
     'portfolio': {
-        title: '💼 PORTFOLIO WEBSITE',
+        title: 'PORTFOLIO WEBSITE',
         mainImage: 'project3.jpg',
         gallery: [
             'project3.jpg',
             'portfolio-mobile.jpg',
             'portfolio-design.jpg'
         ],
-        description: 'Website portfolio responsive yang menampilkan karya, skills, dan pengalaman. Dibangun dengan focus pada user experience dan visual aesthetics yang clean dan modern.',
+        description: 'web ini',
         techStack: [
             'Frontend: HTML5, CSS3, JavaScript',
-            'Styling: Custom CSS dengan CSS Variables',
-            'Icons: Font Awesome 6',
-            'Deployment: GitHub Pages',
-            'Tools: VS Code, Git'
+            'Styling: Custom CSS with CSS Variables',
+            'Deployment: GitHub',
+            'Tools: Notepad, Git'
         ],
         roles: [
             'Full-stack Developer & Designer',
-            'Designed complete UI/UX from scratch',
+            'Designed complete UI/UX',
             'Implemented responsive layout',
             'Developed custom animations and interactions',
-            'Optimized for performance and SEO',
             'Integrated contact form with Formspree'
         ],
         features: [
@@ -220,10 +212,9 @@ const projectsData = {
             'Smooth scrolling navigation',
             'Interactive project gallery',
             'Contact form with validation',
-            'Dark/light theme ready',
             'Fast loading performance'
         ],
-        videoLink: 'https://youtu.be/portfolio-website-tour'
+        //videoLink: 'https://youtu.be/portfolio-website-tour'
     }
 };
 
