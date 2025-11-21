@@ -13,6 +13,33 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Mobile dropdown functionality
+document.querySelectorAll('.nav-dropdown .nav-link').forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdownParent = this.parentElement;
+            dropdownParent.classList.toggle('active');
+        }
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ... (kode JavaScript lainnya tetap sama)
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -113,4 +140,4 @@ window.addEventListener('scroll', updateHeaderColor);
 window.addEventListener('load', updateHeaderColor);
 
 // Juga panggil saat resize (untuk responsive)
-window.addEventListener('resize', updateHeaderColor);
+window.addEventListener('resize', updateHeaderColor);f
