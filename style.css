@@ -826,3 +826,32 @@ section {
     color: var(--primary-color);
     font-weight: 700;
 }
+
+/* Tambahkan di bagian Tools & Technologies atau di akhir file CSS */
+
+/* Styling untuk VS Code icon */
+.fa-code {
+    color: #0078d7; /* Warna biru VS Code */
+    background: linear-gradient(45deg, #0078d7, #2c9bdb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Styling untuk Code::Blocks icon */
+.fa-cogs {
+    color: #0c6cb3; /* Warna Code::Blocks */
+    background: linear-gradient(45deg, #0c6cb3, #1e88e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Atau jika ingin menggunakan icon custom, tambahkan class ini: */
+.tools-grid .skill-item:nth-child(5) i {
+    color: #0078d7;
+}
+
+.tools-grid .skill-item:nth-child(6) i {
+    color: #0c6cb3;
+}
