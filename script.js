@@ -94,7 +94,6 @@ const projectsData = {
             'Pixel art style',
             'Multiple levels'
         ],
-        videoLink: 'https://drive.google.com/your-link-here'
     },
     'sproste': {
         title: 'SPROSTE',
@@ -125,7 +124,6 @@ const projectsData = {
             'Pixel art graphics',
             'Intuitive UI/UX'
         ],
-        videoLink: 'https://drive.google.com/your-link-here'
     },
     'portfolio': {
         title: 'PORTFOLIO WEBSITE',
@@ -193,15 +191,6 @@ function fillModalContent(project) {
     };
     
     document.getElementById('modalDescription').textContent = project.description;
-    
-    // Handle video link - sembunyikan jika tidak ada
-    const videoLinkElement = document.getElementById('modalVideoLink');
-    if (project.videoLink && project.videoLink !== 'https://drive.google.com/your-link-here') {
-        videoLinkElement.href = project.videoLink;
-        videoLinkElement.style.display = 'inline-flex';
-    } else {
-        videoLinkElement.style.display = 'none';
-    }
     
     // Set tech stack
     const techList = document.getElementById('modalTechStack');
@@ -305,6 +294,33 @@ function initializeProjectButtons() {
     });
 }
 
+// Artworks Filter Functionality
+function initializeArtworksFilter() {
+    const filterButtons = document.querySelectorAll('.artworks-filter .filter-btn');
+    const artworkItems = document.querySelectorAll('.artwork-item');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Filter artwork items
+            artworkItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+
 // Skills Filter Functionality
 function initializeSkillsFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -366,7 +382,8 @@ document.addEventListener('keydown', (e) => {
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initializeProjectButtons();
-    initializeSkillsFilter(); // TAMBAH INI
+    initializeSkillsFilter();
+    initializeArtworksFilter(); // TAMBAH INI
     updateHeaderColor();
 });
 

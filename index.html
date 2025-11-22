@@ -37,12 +37,10 @@
             <div class="hero-text">
                 <h1>Hi, I'm <span class="highlight">Muhammad Abian Moksa Gunarto</span></h1>
                 <p class="hero-subtitle">Programmer & Game Artist</p>
-                <p class="hero-description">
-                    [isi teks]
-                </p>
+
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">View Project</a>
+                    <a href="#contact" class="btn btn-secondary">Contact</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -51,6 +49,7 @@
         </div>
     </div>
 </section>
+<div class="section-divider"></div>
 
 <!-- About Section -->
 <section id="about" class="about">
@@ -58,8 +57,10 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>[isi teks]</p>
-                <p>[isi teks]</p>
+                <p>I'm currently studying at Telkom University, majoring in Informatics. I have a strong interest in programming and game development. Although still a beginner, I have a strong passion for learning and an enthusiasm for developing both technical and creative skills.
+</p>
+                <p>I'm currently focused on learning the C++ programming language and improving my artistic skills by drawing characters and environments in a pixel art style. I enjoy working on team projects and learning from more experienced developers.
+I'm eager to contribute to project teams and in an environment that supports growth. I'm open to mentorship and collaboration that can accelerate my learning early in my career.</p>
             </div>
             <div class="about-stats">
                 <div class="stat">
@@ -78,6 +79,7 @@
         </div>
     </div>
 </section>
+<div class="section-divider"></div>
 
 <!-- Skills Section (Menggantikan Programming, Tools, dan Game Art sections) -->
 
@@ -181,6 +183,7 @@
         </div>
     </div>
 </section>
+<div class="section-divider"></div>
 
     <!-- Projects Section -->
 <section id="projects" class="projects">
@@ -233,7 +236,7 @@
                     <img src="project3.jpg" alt="Personal Project 1">
                     <div class="project-info">
                         <h3>Portfolio Website</h3>
-                        <p>Personal portfolio website to showcase my projects and skills as a programmer and game artist..</p>
+                        <p>Personal portfolio website to showcase my projects and skills as a programmer and game artist.</p>
                         <div class="project-tech">
                             <span>HTML5</span>
                             <span>CSS3</span>
@@ -259,44 +262,93 @@
         </div>
     </div>
 </section>
+<div class="section-divider"></div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>abianmoksa25@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>[no hp]</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Bandung, Indonesia</p>
-                        </div>
+<!-- Tambahkan section artworks setelah projects section -->
+<section id="artworks" class="artworks">
+    <div class="container">
+        <h2 class="section-title">Pixel Art Gallery</h2>
+        
+        <!-- Filter Categories -->
+        <div class="artworks-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="characters">Characters</button>
+            <button class="filter-btn" data-filter="environments">Environments</button>
+            <button class="filter-btn" data-filter="ui">UI Elements</button>
+            <button class="filter-btn" data-filter="props">Props</button>
+        </div>
+        
+        <!-- Masonry Grid -->
+        <div class="artworks-grid">
+            <!-- Contoh artwork items - nanti bisa diisi dengan gambar Anda -->
+            <div class="artwork-item" data-category="characters">
+                <img src="character1.png" alt="Character Design 1">
+                <div class="artwork-overlay">
+                    <h3>Main Character</h3>
+                    <span class="artwork-category">Characters</span>
+                </div>
+            </div>
+            
+            <div class="artwork-item" data-category="environments">
+                <img src="environment1.png" alt="Environment 1">
+                <div class="artwork-overlay">
+                    <h3>Forest Scene</h3>
+                    <span class="artwork-category">Environments</span>
+                </div>
+            </div>
+            
+            <div class="artwork-item" data-category="ui">
+                <img src="ui1.png" alt="UI Design 1">
+                <div class="artwork-overlay">
+                    <h3>Game HUD</h3>
+                    <span class="artwork-category">UI Elements</span>
+                </div>
+            </div>
+            
+            <!-- Tambahkan lebih banyak artwork item sesuai kebutuhan -->
+        </div>
+    </div>
+</section>
+<div class="section-divider"></div>
+
+ <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <!-- Download CV Button -->
+        <div class="download-cv-section">
+            <a href="path-to-your-cv.pdf" download class="btn btn-primary download-cv-btn">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+        
+        <div class="contact-content">
+            <!-- Contact info dan form tetap sama -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>abianmoksa25@gmail.com</p>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/myzolekl" method="POST">
-    			<input type="text" name="name" placeholder="Your Name" required>
-   			<input type="email" name="email" placeholder="Your Email" required>
-    			<textarea name="message" placeholder="Message" rows="5" required></textarea>
-    			<button type="submit" class="btn btn-primary">Send</button>
-		</form>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Bandung, Indonesia</p>
+                    </div>
+                </div>
             </div>
+            <form class="contact-form" action="https://formspree.io/f/myzolekl" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -311,13 +363,10 @@
             <a href="https://www.instagram.com/abianjeruk?igsh=aTNjMDgydnNwcTlw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-                <i class="fab fa-discord"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Steam">
+            <a href="https://steamcommunity.com/profiles/76561199506685033" target="_blank" rel="noopener noreferrer" aria-label="Steam">
                 <i class="fab fa-steam"></i>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="MyAnimeList">
+            <a href="https://myanimelist.net/profile/JerukJeruk" target="_blank" rel="noopener noreferrer" aria-label="MyAnimeList">
                 <i class="fas fa-list-alt"></i>
             </a>
         </div>
@@ -365,12 +414,6 @@
                     <ul id="modalFeatures" class="features-list"></ul>
                 </div>
                 
-                <div class="detail-section">
-                    <h3>Demo Video</h3>
-                    <a id="modalVideoLink" href="#" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> Watch
-                    </a>
-                </div>
             </div>
         </div>
     </div>
