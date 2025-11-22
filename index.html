@@ -79,78 +79,104 @@
     </div>
 </section>
 
+<!-- Skills Section (Menggantikan Programming, Tools, dan Game Art sections) -->
 
-<!-- Programming Languages Section -->
-<section id="programming" class="programming">
+<section id="skills" class="skills">
     <div class="container">
-        <h2 class="section-title">Programming Languages</h2>
-        <div class="programming-grid">
-            <div class="skill-item">
-    		<i class="fab fa-cuttlefish"></i>
-    		<h3>C++</h3>
-	    </div>
-            <div class="skill-item">
-                <i class="fab fa-golang"></i>
-                <h3>GO</h3>
-            </div>
+        <h2 class="section-title">Skills</h2>
+        
+        <!-- Skills Filter Buttons -->
+        <div class="skills-filter">
+            <button class="filter-btn active" data-filter="programming">Programming</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+            <button class="filter-btn" data-filter="game-art">Game Art</button>
         </div>
-    </div>
-</section>
-
-<!-- Tools & Technologies Section -->
-<section id="tools" class="tools">
-    <div class="container">
-        <h2 class="section-title">Tools</h2>
-        <div class="tools-grid">
-            <div class="skill-item">
-                <i class="fab fa-git-alt"></i>
-                <h3>Git</h3>
+        
+        <!-- Skills Content Area -->
+        <div class="skills-content">
+            <!-- Programming Languages (Default Active) -->
+            <div class="skills-category active" id="programming-category">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-cuttlefish"></i>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-golang"></i>
+                        <h3>GO</h3>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <i class="fab fa-figma"></i>
-                <h3>Figma</h3>
+            
+            <!-- Frontend -->
+            <div class="skills-category" id="frontend-category">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Aseprite</h3>
+            
+            <!-- Tools & Technologies -->
+            <div class="skills-category" id="tools-category">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <h3>Git</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-figma"></i>
+                        <h3>Figma</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Aseprite</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>RenPy</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h3>VS Code</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Code::Blocks</h3>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <i class="fas fa-gamepad"></i>
-                <h3>RenPy</h3>
-            </div>
-            <!-- Tambahkan VS Code dan Code::Blocks di sini -->
-            <div class="skill-item">
-                <i class="fas fa-code"></i>
-                <h3>VS Code</h3>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-cogs"></i>
-                <h3>Code::Blocks</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Game Art Specializations Section -->
-<section id="game-art" class="game-art">
-    <div class="container">
-        <h2 class="section-title">Game Art Specializations</h2>
-        <div class="game-art-grid">
-            <div class="skill-item">
-                <i class="fas fa-th-large"></i>
-                <h3>Pixel Art</h3>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-user"></i>
-                <h3>Character Design</h3>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-desktop"></i>
-                <h3>UI/UX</h3>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-tree"></i>
-                <h3>Environments</h3>
+            
+            <!-- Game Art Specializations -->
+            <div class="skills-category" id="game-art-category">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-th-large"></i>
+                        <h3>Pixel Art</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-user"></i>
+                        <h3>Character Design</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-desktop"></i>
+                        <h3>UI/UX</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tree"></i>
+                        <h3>Environments</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -276,17 +302,23 @@
 <footer class="footer">
     <div class="container">
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/muhammad-abian-moksa-gunarto-792596322/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/JerukSegar" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/JerukSegar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.instagram.com/abianjeruk?igsh=aTNjMDgydnNwcTlw" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/muhammad-abian-moksa-gunarto-792596322/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/abianjeruk?igsh=aTNjMDgydnNwcTlw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://twitter.com/username-anda" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-twitter"></i>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Steam">
+                <i class="fab fa-steam"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="MyAnimeList">
+                <i class="fas fa-list-alt"></i>
             </a>
         </div>
         <p>&copy; 2025 Muhammad Abian Moksa Gunarto. All rights reserved.</p>

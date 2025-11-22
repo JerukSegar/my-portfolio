@@ -304,36 +304,6 @@ section {
     }
 }
 
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.skill-item {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-}
-
-.skill-item i {
-    font-size: 3rem;
-    color: #3498db;
-    margin-bottom: 1rem;
-}
-
-.skill-item h3 {
-    margin-bottom: 0.5rem;
-}
-
 /* Project Category Titles */
 .project-category-title {
     font-size: 2rem;
@@ -505,21 +475,82 @@ section {
     padding: 2rem 0;
 }
 
+/* Footer Social Links Update */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .social-links a {
     color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Specific icon colors on hover */
+.social-links a:hover .fa-github {
+    color: #6e5494;
+}
+
+.social-links a:hover .fa-linkedin {
+    color: #0077b5;
+}
+
+.social-links a:hover .fa-instagram {
+    color: #e4405f;
+}
+
+.social-links a:hover .fa-discord {
+    color: #5865f2;
+}
+
+.social-links a:hover .fa-steam {
+    color: #000000;
+}
+
+.social-links a:hover .fa-list-alt {
+    color: #2e51a2; /* MyAnimeList blue color */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        font-size: 1.6rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        gap: 0.8rem;
+    }
+    
+    .social-links a {
+        font-size: 1.4rem;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Responsive Design */
@@ -686,28 +717,6 @@ section {
 }
 
 
-/* Programming Languages Section */
-.programming {
-    background: white;
-}
-
-.programming-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-/* Tools & Technologies Section */
-.tools {
-    background: var(--light-color);
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
 .fa-figma {
     background: linear-gradient(45deg, #f24e1e, #ff7262, #a259ff, #1abcfe);
     -webkit-background-clip: text;
@@ -715,16 +724,6 @@ section {
     background-clip: text;
 }
 
-/* Game Art Specializations Section */
-.game-art {
-    background: white;
-}
-
-.game-art-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
 
 /* Skill Item Styles (untuk semua section baru) */
 .skill-item {
@@ -1053,5 +1052,136 @@ section {
     .thumbnail {
         width: 60px;
         height: 45px;
+    }
+}
+
+/* Skills Section */
+.skills {
+    background: var(--light-color);
+    padding: 80px 0;
+}
+
+/* Skills Filter Buttons */
+.skills-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.filter-btn:hover {
+    background: rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Skills Content */
+.skills-content {
+    position: relative;
+    min-height: 300px;
+}
+
+.skills-category {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.skills-category.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* Skill Item Styles */
+.skill-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Frontend Icons Colors */
+.fa-html5 { color: #e34f26; }
+.fa-css3-alt { color: #1572b6; }
+.fa-js-square { color: #f7df1e; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-filter {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .skill-item {
+        padding: 1.5rem;
+    }
+    
+    .skill-item i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 200px;
     }
 }

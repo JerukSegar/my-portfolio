@@ -38,23 +38,6 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('.skill-item, .project-card, .stat').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
 // Header color change based on section
 function updateHeaderColor() {
     const navbar = document.querySelector('.navbar');
@@ -322,6 +305,49 @@ function initializeProjectButtons() {
     });
 }
 
+// Skills Filter Functionality
+function initializeSkillsFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const skillCategories = document.querySelectorAll('.skills-category');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Remove active class from all buttons and categories
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            skillCategories.forEach(category => category.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding category
+            const targetCategory = document.getElementById(`${filter}-category`);
+            if (targetCategory) {
+                targetCategory.classList.add('active');
+            }
+        });
+    });
+}
+
+// Update animation observer untuk include skill items baru
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation - UPDATE INI
+document.querySelectorAll('.skill-item, .project-card, .stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
 // Event Listeners for closing modal
 closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click', (e) => {
@@ -340,6 +366,7 @@ document.addEventListener('keydown', (e) => {
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initializeProjectButtons();
+    initializeSkillsFilter(); // TAMBAH INI
     updateHeaderColor();
 });
 
