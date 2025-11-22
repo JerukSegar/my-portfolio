@@ -295,6 +295,7 @@ function initializeProjectButtons() {
 }
 
 // Artworks Filter Functionality
+// Artworks Filter Functionality
 function initializeArtworksFilter() {
     const filterButtons = document.querySelectorAll('.artworks-filter .filter-btn');
     const artworkItems = document.querySelectorAll('.artwork-item');
