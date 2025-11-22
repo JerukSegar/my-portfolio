@@ -1348,3 +1348,65 @@ section {
         width: 200px;
     }
 }
+
+/* Layered Background dengan External Assets */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Base gradient - dark blue theme */
+        linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%),
+        /* Geometric shapes */
+        url('assets/bg-shapes.svg'),
+        /* Noise texture */
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" opacity="0.02"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23noise)"/></svg>');
+    background-blend-mode: overlay, normal, normal;
+    background-size: cover, cover, 200px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Section backgrounds menjadi transparan */
+.hero {
+    background: transparent !important;
+    position: relative;
+}
+
+.about, .skills, .projects, .artworks, .contact {
+    background: transparent !important;
+    position: relative;
+}
+
+/* Overlay untuk sections */
+.about::before, .skills::before, .projects::before, .artworks::before, .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 240, 241, 0.92);
+    z-index: -1;
+}
+
+/* Hero overlay khusus */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.85);
+    z-index: -1;
+}
+
+/* Footer background tetap solid */
+.footer {
+    background: var(--dark-color) !important;
+    position: relative;
+}
