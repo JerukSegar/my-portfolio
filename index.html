@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Nama Anda</title>
+    <title>Portfolio - Muhammad Abian Moksa Gunarto</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="#home">Portfolio</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#artworks" class="nav-link">Artworks</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-	<!-- Di dalam .nav-menu -->
-	<div class="nav-menu">
-   		 <a href="#home" class="nav-link">Home</a>
-   		 <a href="#about" class="nav-link">About</a>
-   		 <a href="#programming" class="nav-link">Skills</a> 
-   		 <a href="#projects" class="nav-link">Projects</a>
-   		 <a href="#contact" class="nav-link">Contact</a>
-	</div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section id="home" class="hero">
     <div class="container">
         <div class="hero-content">
@@ -50,436 +50,449 @@
     </div>
 </section>
 
-
-<!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>I'm currently studying at Telkom University, majoring in Informatics. I have a strong interest in programming and game development. Although still a beginner, I have a strong passion for learning and an enthusiasm for developing both technical and creative skills.
-</p>
-                <p>I'm currently focused on learning the C++ programming language and improving my artistic skills by drawing characters and environments in a pixel art style. I enjoy working on team projects and learning from more experienced developers.
-I'm eager to contribute to project teams and in an environment that supports growth. I'm open to mentorship and collaboration that can accelerate my learning early in my career.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">✦</span>
+                <span class="divider-line"></span>
             </div>
-            <div class="about-stats">
-                <div class="stat">
-                    <h3>[0+]</h3>
-                    <p>Years of Experience</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm currently studying at Telkom University, majoring in Informatics. I have a strong interest in programming and game development. Although still a beginner, I have a strong passion for learning and an enthusiasm for developing both technical and creative skills.</p>
+                    <p>I'm currently focused on learning the C++ programming language and improving my artistic skills by drawing characters and environments in a pixel art style. I enjoy working on team projects and learning from more experienced developers. I'm eager to contribute to project teams and in an environment that supports growth. I'm open to mentorship and collaboration that can accelerate my learning early in my career.</p>
                 </div>
-                <div class="stat">
-                    <h3>[4?]</h3>
-                    <p>Finished Project</p>
-                </div>
-                <div class="stat">
-                    <h3>[]</h3>
-                    <p>[apa ini?]</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Skills Section (Menggantikan Programming, Tools, dan Game Art sections) -->
-
-<section id="skills" class="skills">
-    <div class="container">
-        <h2 class="section-title">Skills</h2>
-        
-        <!-- Skills Filter Buttons -->
-        <div class="skills-filter">
-            <button class="filter-btn active" data-filter="programming">Programming</button>
-            <button class="filter-btn" data-filter="frontend">Frontend</button>
-            <button class="filter-btn" data-filter="tools">Tools</button>
-            <button class="filter-btn" data-filter="game-art">Game Art</button>
-        </div>
-        
-        <!-- Skills Content Area -->
-        <div class="skills-content">
-            <!-- Programming Languages (Default Active) -->
-            <div class="skills-category active" id="programming-category">
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-cuttlefish"></i>
-                        <h3>C++</h3>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>0+</h3>
+                        <p>Years of Experience</p>
                     </div>
-                    <div class="skill-item">
-                        <i class="fab fa-golang"></i>
-                        <h3>GO</h3>
+                    <div class="stat">
+                        <h3>4+</h3>
+                        <p>Finished Projects</p>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Frontend -->
-            <div class="skills-category" id="frontend-category">
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        <h3>HTML5</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-js-square"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tools & Technologies -->
-            <div class="skills-category" id="tools-category">
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-git-alt"></i>
-                        <h3>Git</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-figma"></i>
-                        <h3>Figma</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Aseprite</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-gamepad"></i>
-                        <h3>RenPy</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <h3>VS Code</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Code::Blocks</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Game Art Specializations -->
-            <div class="skills-category" id="game-art-category">
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-th-large"></i>
-                        <h3>Pixel Art</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-user"></i>
-                        <h3>Character Design</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-desktop"></i>
-                        <h3>UI/UX</h3>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-tree"></i>
-                        <h3>Environments</h3>
+                    <div class="stat">
+                        <h3>2</h3>
+                        <p>Team Projects</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">✦</span>
+                <span class="divider-line"></span>
+            </div>
+            
+            <!-- Skills Filter Buttons -->
+            <div class="skills-filter">
+                <button class="skills-filter-btn active" data-filter="programming">Programming</button>
+                <button class="skills-filter-btn" data-filter="frontend">Frontend</button>
+                <button class="skills-filter-btn" data-filter="tools">Tools</button>
+                <button class="skills-filter-btn" data-filter="game-art">Game Art</button>
+            </div>
+            
+            <!-- Skills Content Area -->
+            <div class="skills-content">
+                <!-- Programming Languages (Default Active) -->
+                <div class="skills-category active" id="programming-category">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-cuttlefish"></i>
+                            <h3>C++</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-golang"></i>
+                            <h3>GO</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frontend -->
+                <div class="skills-category" id="frontend-category">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <h3>JavaScript</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skills-category" id="tools-category">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <h3>Git</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-figma"></i>
+                            <h3>Figma</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>Aseprite</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>RenPy</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <h3>VS Code</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Code::Blocks</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Art Specializations -->
+                <div class="skills-category" id="game-art-category">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-th-large"></i>
+                            <h3>Pixel Art</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-user"></i>
+                            <h3>Character Design</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-desktop"></i>
+                            <h3>UI/UX</h3>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-tree"></i>
+                            <h3>Environments</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
-<section id="projects" class="projects">
-    <div class="container">
-        <h2 class="section-title">My Projects</h2>
-        
-        <!-- Team Projects -->
-        <div class="project-category">
-            <h3 class="project-category-title">Team Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="logo_jemuran.png" alt="Jemuran the Game">
-                    <div class="project-info">
-                        <h3>Jemuran the Game</h3>
-                        <p>A survival game developed with 5 other developers. I was responsible for creating visual elements including characters and environments.</p>
-                        <div class="project-tech">
-                            <span>Godot</span>
-                            <span>Pixel 2D</span>
-                        </div>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="logo_sproste.png" alt="Sproste">
-                    <div class="project-info">
-                        <h3>Sproste</h3>
-                        <p>A side-scrolling puzzle game developed with 3 other developers. As the Artist, I was responsible for the visual aspects, including characters, environments, and the user interface.</p>
-                        <div class="project-tech">
-                            <span>Unity</span>
-                            <span>Pixel 2D</span>
-                        </div>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Divider between categories -->
-        <div class="category-divider">
-            <span class="divider-line"></span>
-            <span class="divider-text">AND</span>
-            <span class="divider-line"></span>
-        </div>
-
-        <!-- Personal Projects -->
-        <div class="project-category">
-            <h3 class="project-category-title">Personal Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="project3.jpg" alt="Personal Project 1">
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>Personal portfolio website to showcase my projects and skills as a programmer and game artist.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="project4.jpg" alt="Personal Project 2">
-                    <div class="project-info">
-                        <h3>[isi apa ini?]</h3>
-                        <p>[isi teks]</p>
-                        <div class="project-tech">
-                            <span>[]</span>
-                            <span>[]</span>
-                            <span>[]</span>
-                        </div>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Tambahkan section artworks setelah projects section -->
-<section id="artworks" class="artworks">
-    <div class="container">
-        <h2 class="section-title">Artwork</h2>
-        
-        <!-- Filter Categories -->
-        <div class="artworks-filter">
-              <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="characters">Characters</button>
-              <button class="filter-btn" data-filter="environments">Environments</button>
-              <button class="filter-btn" data-filter="ui">UI Elements</button>
-              <button class="filter-btn" data-filter="props">Props</button>
-                <button class="filter-btn" data-filter="illustrations">Illustrations</button>
-        </div>
-        
-        <!-- Masonry Grid -->
-        <div class="artworks-grid">
-            <!-- Contoh artwork items - nanti bisa diisi dengan gambar Anda -->
-            <div class="artwork-item" data-category="characters">
-                <img src="character1.png" alt="Character Design 1">
-                <div class="artwork-overlay">
-                    <h3>Dante</h3>
-                    <span class="artwork-category">Characters</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="characters">
-                <img src="character3.png" alt="Character Design 1">
-                <div class="artwork-overlay">
-                    <h3>Emak</h3>
-                    <span class="artwork-category">Characters</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="characters">
-                <img src="character2.gif" alt="Character Design 1">
-                <div class="artwork-overlay">
-                    <h3>Jabrig</h3>
-                    <span class="artwork-category">Characters</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="ui">
-                <img src="ui1.png" alt="UI Design 1">
-                <div class="artwork-overlay">
-                    <h3>Pause Menu</h3>
-                    <span class="artwork-category">UI Elements</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="ui">
-                <img src="ui2.png" alt="UI Design 1">
-                <div class="artwork-overlay">
-                    <h3>Level Select</h3>
-                    <span class="artwork-category">UI Elements</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="props">
-                <img src="props1.gif" alt="UI Design 1">
-                <div class="artwork-overlay">
-                    <h3>Devil Sword</h3>
-                    <span class="artwork-category">Props</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="props">
-                <img src="props2.gif" alt="UI Design 1">
-                <div class="artwork-overlay">
-                    <h3>Api</h3>
-                    <span class="artwork-category">Props</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="illustrations">
-                <img src="ilustration1.png" alt="Coffee Illustration">
-                <div class="artwork-overlay">
-                    <h3>Sword</h3>
-                    <span class="artwork-category">Illustrations</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="illustrations">
-                <img src="pibi.png" alt="Coffee Illustration">
-                <div class="artwork-overlay">
-                    <h3>Pibi</h3>
-                    <span class="artwork-category">Illustrations</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="illustrations">
-                <img src="ilustration4.png" alt="Coffee Illustration">
-                <div class="artwork-overlay">
-                    <h3>Changli</h3>
-                    <span class="artwork-category">Illustrations</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="illustrations">
-                <img src="piano.png" alt="Coffee Illustration">
-                <div class="artwork-overlay">
-                    <h3>Piano</h3>
-                    <span class="artwork-category">Illustrations</span>
-                </div>
-            </div>
-            <div class="artwork-item" data-category="illustrations">
-                <img src="kopi1920.png" alt="Coffee Illustration">
-                <div class="artwork-overlay">
-                    <h3>Coffee</h3>
-                    <span class="artwork-category">Illustrations</span>
-                </div>
-            </div>
-
-            <!-- Tambahkan lebih banyak artwork item sesuai kebutuhan -->
-        </div>
-    </div>
-</section>
-
-
- <section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        
-        <!-- Download CV Button -->
-        <div class="download-cv-section">
-            <a href="path-to-your-cv.pdf" download class="btn btn-primary download-cv-btn">
-                <i class="fas fa-download"></i> Download CV
-            </a>
-        </div>
-        
-        <div class="contact-content">
-            <!-- Contact info dan form tetap sama -->
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <p>abianmoksa25@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Bandung, Indonesia</p>
-                    </div>
-                </div>
-            </div>
-            <form class="contact-form" action="https://formspree.io/f/myzolekl" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="social-links">
-            <a href="https://github.com/JerukSegar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/muhammad-abian-moksa-gunarto-792596322/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/abianjeruk?igsh=aTNjMDgydnNwcTlw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://steamcommunity.com/profiles/76561199506685033" target="_blank" rel="noopener noreferrer" aria-label="Steam">
-                <i class="fab fa-steam"></i>
-            </a>
-            <a href="https://myanimelist.net/profile/JerukJeruk" target="_blank" rel="noopener noreferrer" aria-label="MyAnimeList">
-                <i class="fas fa-list-alt"></i>
-            </a>
-        </div>
-        <p>&copy; 2025 Muhammad Abian Moksa Gunarto. All rights reserved.</p>
-    </div>
-</footer>
-
-<!-- Modal Structure -->
-<div id="projectModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 id="modalTitle">Project Title</h2>
-            <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-            <!-- Gallery Section -->
-            <div class="modal-gallery">
-                <div class="main-image">
-                    <img id="modalMainImage" src="" alt="Main Project Image">
-                </div>
-                <div class="thumbnail-gallery">
-                    <!-- Thumbnails will be inserted here by JavaScript -->
-                </div>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">✦</span>
+                <span class="divider-line"></span>
             </div>
             
-            <!-- Project Details -->
-            <div class="project-details">
-                <div class="detail-section">
-                    <h3>Game Description</h3>
-                    <p id="modalDescription"></p>
+            <!-- Team Projects -->
+            <div class="project-category">
+                <h3 class="project-category-title">Team Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="logo_jemuran.png" alt="Jemuran the Game">
+                        <div class="project-info">
+                            <h3>Jemuran the Game</h3>
+                            <p>A survival game developed with 5 other developers. I was responsible for creating visual elements including characters and environments.</p>
+                            <div class="project-tech">
+                                <span>Godot</span>
+                                <span>Pixel 2D</span>
+                            </div>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="logo_sproste.png" alt="Sproste">
+                        <div class="project-info">
+                            <h3>Sproste</h3>
+                            <p>A side-scrolling puzzle game developed with 3 other developers. As the Artist, I was responsible for the visual aspects, including characters, environments, and the user interface.</p>
+                            <div class="project-tech">
+                                <span>Unity</span>
+                                <span>Pixel 2D</span>
+                            </div>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider between categories -->
+            <div class="category-divider">
+                <span class="divider-line"></span>
+                <span class="divider-text">AND</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Personal Projects -->
+            <div class="project-category">
+                <h3 class="project-category-title">Personal Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="profile.png" alt="Personal Project 1">
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>Personal portfolio website to showcase my projects and skills as a programmer and game artist.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="project4.jpg" alt="Personal Project 2">
+                        <div class="project-info">
+                            <h3>Penalty Shooter Simulator (unfinished)</h3>
+                            <p>A website that contains a simulation of a penalty shootout in football</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="#" class="project-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artworks Section -->
+    <section id="artworks" class="artworks">
+        <div class="container">
+            <h2 class="section-title">Artwork</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">✦</span>
+                <span class="divider-line"></span>
+            </div>
+            
+            <!-- Filter Categories -->
+            <div class="artworks-filter">
+                <button class="artworks-filter-btn active" data-filter="all">All</button>
+                <button class="artworks-filter-btn" data-filter="characters">Characters</button>
+                <button class="artworks-filter-btn" data-filter="environments">Environments</button>
+                <button class="artworks-filter-btn" data-filter="ui">UI Elements</button>
+                <button class="artworks-filter-btn" data-filter="props">Props</button>
+                <button class="artworks-filter-btn" data-filter="illustrations">Illustrations</button>
+            </div>
+            
+            <!-- Masonry Grid -->
+            <div class="artworks-grid">
+                <div class="artwork-item" data-category="characters">
+                    <img src="character1.png" alt="Character Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Dante</h3>
+                        <span class="artwork-category">Characters</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="characters">
+                    <img src="character3.png" alt="Character Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Emak</h3>
+                        <span class="artwork-category">Characters</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="characters">
+                    <img src="character2.gif" alt="Character Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Jabrig</h3>
+                        <span class="artwork-category">Characters</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="ui">
+                    <img src="ui1.png" alt="UI Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Pause Menu</h3>
+                        <span class="artwork-category">UI Elements</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="ui">
+                    <img src="ui2.png" alt="UI Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Level Select</h3>
+                        <span class="artwork-category">UI Elements</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="props">
+                    <img src="props1.gif" alt="UI Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Devil Sword</h3>
+                        <span class="artwork-category">Props</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="props">
+                    <img src="props2.gif" alt="UI Design 1">
+                    <div class="artwork-overlay">
+                        <h3>Api</h3>
+                        <span class="artwork-category">Props</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="illustrations">
+                    <img src="ilustration1.png" alt="Coffee Illustration">
+                    <div class="artwork-overlay">
+                        <h3>Sword</h3>
+                        <span class="artwork-category">Illustrations</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="illustrations">
+                    <img src="pibi.png" alt="Coffee Illustration">
+                    <div class="artwork-overlay">
+                        <h3>Pibi</h3>
+                        <span class="artwork-category">Illustrations</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="illustrations">
+                    <img src="ilustration4.png" alt="Coffee Illustration">
+                    <div class="artwork-overlay">
+                        <h3>Changli</h3>
+                        <span class="artwork-category">Illustrations</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="illustrations">
+                    <img src="piano.png" alt="Coffee Illustration">
+                    <div class="artwork-overlay">
+                        <h3>Piano</h3>
+                        <span class="artwork-category">Illustrations</span>
+                    </div>
+                </div>
+                <div class="artwork-item" data-category="illustrations">
+                    <img src="kopi1920.png" alt="Coffee Illustration">
+                    <div class="artwork-overlay">
+                        <h3>Coffee</h3>
+                        <span class="artwork-category">Illustrations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon">✦</span>
+                <span class="divider-line"></span>
+            </div>
+            
+            <!-- Download CV Button -->
+            <div class="download-cv-section">
+                <a href="path-to-your-cv.pdf" download class="btn btn-primary download-cv-btn">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>abianmoksa25@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Bandung, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/myzolekl" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/JerukSegar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/muhammad-abian-moksa-gunarto-792596322/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/abianjeruk?igsh=aTNjMDgydnNwcTlw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://steamcommunity.com/profiles/76561199506685033" target="_blank" rel="noopener noreferrer" aria-label="Steam">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="https://myanimelist.net/profile/JerukJeruk" target="_blank" rel="noopener noreferrer" aria-label="MyAnimeList">
+                    <i class="fas fa-list-alt"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Muhammad Abian Moksa Gunarto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Gallery Section -->
+                <div class="modal-gallery">
+                    <div class="main-image">
+                        <img id="modalMainImage" src="" alt="Main Project Image">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <!-- Thumbnails will be inserted here by JavaScript -->
+                    </div>
                 </div>
                 
-                <div class="detail-section">
-                    <h3>Project Specifications</h3>
-                    <ul id="modalTechStack" class="tech-list"></ul>
+                <!-- Project Details -->
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h3>Game Description</h3>
+                        <p id="modalDescription"></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Project Specifications</h3>
+                        <ul id="modalTechStack" class="tech-list"></ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>My Role & Responsibilities</h3>
+                        <ul id="modalRoles" class="roles-list"></ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>Game Features</h3>
+                        <ul id="modalFeatures" class="features-list"></ul>
+                    </div>
                 </div>
-                
-                <div class="detail-section">
-                    <h3>My Role & Responsibilities</h3>
-                    <ul id="modalRoles" class="roles-list"></ul>
-                </div>
-                
-                <div class="detail-section">
-                    <h3>Game Features</h3>
-                    <ul id="modalFeatures" class="features-list"></ul>
-                </div>
-                
             </div>
         </div>
     </div>
-</div>
 
     <script src="script.js"></script>
 </body>

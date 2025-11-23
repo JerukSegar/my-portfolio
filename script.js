@@ -100,7 +100,7 @@ const projectsData = {
         mainImage: 'logo_sproste.png',
         gallery: [
             'logo_sproste.png',
-	    'sproste-menu.png',
+            'sproste-menu.png',
             'sproste-gameplay1.png',
             'sproste-gameplay2.png',
             'sproste-character.png'
@@ -127,17 +127,17 @@ const projectsData = {
     },
     'portfolio': {
         title: 'PORTFOLIO WEBSITE',
-        mainImage: 'project3.jpg',
+        mainImage: 'profile.png',
         gallery: [
-            'project3.jpg',
-            'portfolio-mobile.jpg',
-            'portfolio-design.jpg'
+            'profile.png',
+            'pcview.png',
+            'mobileview.jpg'
         ],
         description: 'Personal portfolio website to showcase my projects and skills as a programmer and game artist.',
         techStack: [
             'Frontend: HTML5, CSS3, JavaScript',
             'Styling: Custom CSS with CSS Variables',
-            'Deployment: GitHub',
+            'Deployment: Vercel',
             'Tools: VS Code, Git'
         ],
         roles: [
@@ -154,8 +154,36 @@ const projectsData = {
             'Contact form with validation',
             'Fast loading performance'
         ],
-	projectType: 'website'
-    }
+        projectType: 'website'
+    },
+    'penalty-shooter': {
+        title: 'PENALTY SHOOTER SIMULATOR',
+        mainImage: 'project4.jpg',
+        gallery: [
+            'project4.jpg'
+        ],
+        description: 'A website that contains a simulation of a penalty shootout in football. This interactive web application allows users to experience the thrill of penalty kicks with realistic physics and gameplay mechanics.',
+        techStack: [
+            'Frontend: HTML5, CSS3, JavaScript',
+            'Game Logic: Vanilla JavaScript',
+            'Styling: Custom CSS',
+            'Tools: VS Code, Git'
+        ],
+        roles: [
+            'Full-stack Developer',
+            'Designed game mechanics and physics',
+            'Implemented user interface',
+            'Developed interactive gameplay elements'
+        ],
+        features: [
+            'Realistic penalty kick physics',
+            'Interactive goalkeeper AI',
+            'Score tracking system',
+            'Responsive design for all devices',
+            'Smooth animations and transitions'
+        ],
+        projectType: 'website'
+    },
 };
 
 // Modal Functionality
@@ -180,15 +208,15 @@ function fillModalContent(project) {
     mainImage.alt = project.title;
     mainImage.onerror = function() {
         this.src = 'placeholder.jpg';
-        this.alt = 'Image not available';
-
-	const descriptionTitle = document.querySelector('.detail-section h3');
-	if (project.projectType === 'website') {
-    		descriptionTitle.textContent = 'Project Description';
-	} else {
-   		 descriptionTitle.textContent = 'Game Description';
-	}
     };
+
+    // Update description title based on project type
+    const descriptionTitle = document.querySelector('.detail-section h3');
+    if (project.projectType === 'website') {
+        descriptionTitle.textContent = 'Project Description';
+    } else {
+        descriptionTitle.textContent = 'Game Description';
+    }
     
     document.getElementById('modalDescription').textContent = project.description;
     
@@ -255,10 +283,9 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Initialize project buttons - VERSI YANG DIPERBAIKI
+// Initialize project buttons
 function initializeProjectButtons() {
     const projectLinks = document.querySelectorAll('.project-link');
-    console.log('Found project links:', projectLinks.length);
     
     projectLinks.forEach(link => {
         // Hapus event listener lama jika ada
@@ -271,18 +298,14 @@ function initializeProjectButtons() {
             e.preventDefault();
             e.stopPropagation();
             
-            console.log('View Details clicked');
-            
             const projectCard = this.closest('.project-card');
             const projectTitle = projectCard.querySelector('h3').textContent.toLowerCase();
-            console.log('Project title:', projectTitle);
             
             let projectKey = '';
             if (projectTitle.includes('jemuran')) projectKey = 'jemuran';
             else if (projectTitle.includes('sproste')) projectKey = 'sproste';
             else if (projectTitle.includes('portfolio')) projectKey = 'portfolio';
-            
-            console.log('Project key:', projectKey);
+            else if (projectTitle.includes('penalty')) projectKey = 'penalty-shooter';
             
             if (projectsData[projectKey]) {
                 openModal(projectsData[projectKey]);
@@ -294,10 +317,34 @@ function initializeProjectButtons() {
     });
 }
 
-// Artworks Filter Functionality
+// Skills Filter Functionality
+function initializeSkillsFilter() {
+    const filterButtons = document.querySelectorAll('.skills-filter-btn');
+    const skillCategories = document.querySelectorAll('.skills-category');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Remove active class from all buttons and categories
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            skillCategories.forEach(category => category.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding category
+            const targetCategory = document.getElementById(`${filter}-category`);
+            if (targetCategory) {
+                targetCategory.classList.add('active');
+            }
+        });
+    });
+}
+
 // Artworks Filter Functionality
 function initializeArtworksFilter() {
-    const filterButtons = document.querySelectorAll('.artworks-filter .filter-btn');
+    const filterButtons = document.querySelectorAll('.artworks-filter-btn');
     const artworkItems = document.querySelectorAll('.artwork-item');
     
     filterButtons.forEach(button => {
@@ -321,33 +368,53 @@ function initializeArtworksFilter() {
     });
 }
 
-
-// Skills Filter Functionality
-function initializeSkillsFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const skillCategories = document.querySelectorAll('.skills-category');
+// Function to ensure skills section is always visible
+function ensureSkillsVisibility() {
+    const skillsCategories = document.querySelectorAll('.skills-category');
+    const skillsFilterBtns = document.querySelectorAll('.skills-filter-btn');
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
-            
-            // Remove active class from all buttons and categories
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            skillCategories.forEach(category => category.classList.remove('active'));
-            
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            // Show corresponding category
-            const targetCategory = document.getElementById(`${filter}-category`);
-            if (targetCategory) {
-                targetCategory.classList.add('active');
-            }
+    // Check if any skills category is active
+    const hasActiveCategory = Array.from(skillsCategories).some(category => 
+        category.classList.contains('active')
+    );
+    
+    // If no category is active, show programming category
+    if (!hasActiveCategory) {
+        skillsCategories.forEach(category => category.classList.remove('active'));
+        skillsFilterBtns.forEach(btn => btn.classList.remove('active'));
+        
+        const programmingCategory = document.getElementById('programming-category');
+        const programmingBtn = document.querySelector('.skills-filter-btn[data-filter="programming"]');
+        
+        if (programmingCategory && programmingBtn) {
+            programmingCategory.classList.add('active');
+            programmingBtn.classList.add('active');
+        }
+    }
+}
+
+// Call this function periodically and on scroll
+function initializeSectionMonitoring() {
+    // Check skills section visibility on scroll
+    window.addEventListener('scroll', () => {
+        const skillsSection = document.getElementById('skills');
+        const rect = skillsSection.getBoundingClientRect();
+        
+        // If skills section is in viewport, ensure it's visible
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            ensureSkillsVisibility();
+        }
+    });
+    
+    // Also check when filter buttons are clicked in artworks
+    document.querySelectorAll('.artworks-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            setTimeout(ensureSkillsVisibility, 100);
         });
     });
 }
 
-// Update animation observer untuk include skill items baru
+// Initialize animation observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -357,7 +424,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation - UPDATE INI
+// Observe elements for animation
 document.querySelectorAll('.skill-item, .project-card, .stat').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -384,8 +451,10 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', function() {
     initializeProjectButtons();
     initializeSkillsFilter();
-    initializeArtworksFilter(); // TAMBAH INI
+    initializeArtworksFilter();
+    initializeSectionMonitoring();
     updateHeaderColor();
+    ensureSkillsVisibility();
 });
 
 // Event listeners for header color
