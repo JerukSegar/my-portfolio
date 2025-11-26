@@ -497,6 +497,71 @@ section {
     gap: 0.8rem;
 }
 
+/* Add to existing CSS */
+
+/* Project Link Buttons */
+.links-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.project-link-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    color: white;
+}
+
+.project-link-btn i {
+    font-size: 1.1rem;
+}
+
+/* Unavailable Link Style */
+.unavailable-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    background: #95a5a6;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.unavailable-link i {
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments for links */
+@media (max-width: 768px) {
+    .links-container {
+        justify-content: center;
+    }
+    
+    .project-link-btn,
+    .unavailable-link {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Category Divider */
 .category-divider {
     display: flex;

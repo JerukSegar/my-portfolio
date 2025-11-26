@@ -65,7 +65,7 @@ function updateHeaderColor() {
     }
 }
 
-// Project Data
+// Project Data - UPDATE dengan menambahkan link properties
 const projectsData = {
     'jemuran': {
         title: 'JEMURAN THE GAME',
@@ -94,6 +94,8 @@ const projectsData = {
             'Pixel art style',
             'Multiple levels'
         ],
+        demoVideo: '', // Kosong untuk unavailable
+        projectType: 'game'
     },
     'sproste': {
         title: 'SPROSTE',
@@ -105,7 +107,7 @@ const projectsData = {
             'sproste-gameplay2.png',
             'sproste-character.png'
         ],
-        description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant. During their exploration, players solve various puzzles to discover clues about where plants might grow again in this barren world. Players also discover stories about humanity\'s journey to defeat its own trash.',
+        description: 'A 2D, physics-based environmental puzzle game in which players assume the role of an exploration robot navigating a barren, trash-filled world to find a plant.',
         techStack: [
             'Genre: Puzzle, Adventure',
             'Platform: PC (Windows)',
@@ -124,6 +126,8 @@ const projectsData = {
             'Pixel art graphics',
             'Intuitive UI/UX'
         ],
+        demoVideo: '', // Kosong untuk unavailable
+        projectType: 'game'
     },
     'portfolio': {
         title: 'PORTFOLIO WEBSITE',
@@ -154,6 +158,7 @@ const projectsData = {
             'Contact form with validation',
             'Fast loading performance'
         ],
+        webLink: 'https://my-portfolio-abianjeruk.vercel.app/', // Kosong untuk unavailable
         projectType: 'website'
     },
     'penalty-shooter': {
@@ -162,7 +167,7 @@ const projectsData = {
         gallery: [
             'project4.jpg'
         ],
-        description: 'A website that contains a simulation of a penalty shootout in football. This interactive web application allows users to experience the thrill of penalty kicks with realistic physics and gameplay mechanics.',
+        description: 'A website that contains a simulation of a penalty shootout in football.',
         techStack: [
             'Frontend: HTML5, CSS3, JavaScript',
             'Game Logic: Vanilla JavaScript',
@@ -182,6 +187,7 @@ const projectsData = {
             'Responsive design for all devices',
             'Smooth animations and transitions'
         ],
+        webLink: '', // Kosong untuk unavailable
         projectType: 'website'
     },
 };
@@ -197,7 +203,7 @@ function openModal(project) {
     document.body.style.overflow = 'hidden';
 }
 
-// Function to fill modal content
+// Function to fill modal content - UPDATE dengan menambahkan link sections
 function fillModalContent(project) {
     // Set basic info
     document.getElementById('modalTitle').textContent = project.title;
@@ -246,6 +252,58 @@ function fillModalContent(project) {
         li.textContent = feature;
         featuresList.appendChild(li);
     });
+    
+    // Handle Web Link atau Demo Video berdasarkan project type
+    const linksSection = document.getElementById('modalLinks');
+    if (!linksSection) {
+        // Create links section jika belum ada
+        const projectDetails = document.querySelector('.project-details');
+        const linksSectionHTML = `
+            <div class="detail-section">
+                <h3 id="linksTitle">Project Links</h3>
+                <div id="modalLinks" class="links-container"></div>
+            </div>
+        `;
+        // Insert setelah features section
+        const featuresSection = document.querySelector('.detail-section:last-child');
+        featuresSection.insertAdjacentHTML('afterend', linksSectionHTML);
+    }
+    
+    const linksContainer = document.getElementById('modalLinks');
+    const linksTitle = document.getElementById('linksTitle');
+    linksContainer.innerHTML = '';
+    
+    if (project.projectType === 'website') {
+        linksTitle.textContent = 'Web Link';
+        if (project.webLink) {
+            linksContainer.innerHTML = `
+                <a href="${project.webLink}" target="_blank" class="project-link-btn">
+                    <i class="fas fa-external-link-alt"></i> Visit Website
+                </a>
+            `;
+        } else {
+            linksContainer.innerHTML = `
+                <div class="unavailable-link">
+                    <i class="fas fa-clock"></i> Link Unavailable
+                </div>
+            `;
+        }
+    } else if (project.projectType === 'game') {
+        linksTitle.textContent = 'Demo Video';
+        if (project.demoVideo) {
+            linksContainer.innerHTML = `
+                <a href="${project.demoVideo}" target="_blank" class="project-link-btn">
+                    <i class="fas fa-play-circle"></i> Watch Demo Video
+                </a>
+            `;
+        } else {
+            linksContainer.innerHTML = `
+                <div class="unavailable-link">
+                    <i class="fas fa-clock"></i> Video Unavailable
+                </div>
+            `;
+        }
+    }
     
     // Set gallery dengan error handling
     const gallery = document.querySelector('.thumbnail-gallery');
