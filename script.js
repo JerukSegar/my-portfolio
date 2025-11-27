@@ -405,6 +405,15 @@ function initializeArtworksFilter() {
     const filterButtons = document.querySelectorAll('.artworks-filter-btn');
     const artworkItems = document.querySelectorAll('.artwork-item');
     
+    // Set default filter to characters
+    artworkItems.forEach(item => {
+        if (item.getAttribute('data-category') === 'characters') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
@@ -416,7 +425,7 @@ function initializeArtworksFilter() {
             
             // Filter artwork items
             artworkItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                if (item.getAttribute('data-category') === filter) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
